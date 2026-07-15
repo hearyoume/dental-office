@@ -1,23 +1,30 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link, NavLink } from "react-router-dom";
 
 export default function NavbarComponent() {
   return (
     <Navbar expand="lg" bg="light" data-bs-theme="light">
       <Container fluid>
-        <Navbar.Brand href="#" className="fw-semibold">
+        <Navbar.Brand as={Link} to="/" className="fw-semibold">
           Ellis Family Dentistry
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#" active>
+            <Nav.Link as={NavLink} to="/" end>
               Home
             </Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
-            <Nav.Link href="#">Services</Nav.Link>
-            <Nav.Link href="#">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/about">
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/services">
+              Services
+            </Nav.Link>
+            <Nav.Link as={Link} to="/contact">
+              Contact
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
