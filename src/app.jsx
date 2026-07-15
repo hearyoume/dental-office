@@ -10,14 +10,18 @@ import Services from "./pages/services";
 export default function App() {
   return (
     <BrowserRouter>
-      <NavbarComponent />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      <div className="d-flex flex-column min-vh-100">
+        <NavbarComponent />
+        <main className="flex-grow-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

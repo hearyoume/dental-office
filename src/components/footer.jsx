@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark text-light py-4 mt-5">
+    <footer className="bg-dark text-light py-4 mt-auto">
       <Container>
         <Row className="mb-3">
           {/* Address & Phone */}
