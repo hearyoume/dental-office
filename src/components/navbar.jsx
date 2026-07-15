@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function NavbarComponent() {
   return (
-    <Navbar expand="lg" bg="light" data-bs-theme="light">
+    <Navbar expand="lg" bg="warm" variant="dark">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="fw-semibold">
           Ellis Family Dentistry
