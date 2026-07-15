@@ -1,0 +1,13 @@
+.bg-warm {
+  background-color: #609674;
+}
+
+.btn-warm {
+  background-color: #b2b23d;
+  border-color: #a0a036;
+
+  &:hover {
+    background-color: #a0a036;
+    border-color: #8f8f2f;
+  }
+}
