@@ -6,14 +6,14 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark text-light py-4 mt-auto">
+    <footer className="bg-warm text-light py-4 mt-auto">
       <Container>
         <Row className="mb-3">
           {/* Address & Phone */}
           <Col md={4} className="mb-3 mb-md-0">
             <h6 className="text-uppercase mb-2">Contact</h6>
-            <p className="mb-1">123 Main Street, Collinsville, IL 62234</p>
-            <p className="mb-0">(618) 555-0123</p>
+            <p className="mb-1">123 Pain Relief Lane, Collinsville, IL 62234</p>
+            <p className="mb-0">(618) 867-5309</p>
           </Col>
 
           {/* Page Links */}
