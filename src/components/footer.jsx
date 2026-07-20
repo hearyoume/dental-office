@@ -12,8 +12,24 @@ export default function Footer() {
           {/* Address, Email, Phone */}
           <Col md={4} className="mb-3 mb-md-0">
             <h6 className="text-uppercase mb-2">Contact</h6>
-            <p className="mb-1">123 Pain Relief Lane, Collinsville, IL 62234</p>
-            <p className="mb-1">info@ellisfamilydentistry.com</p>
+            <p className="mb-1">
+              <a
+                href="https://google/maps/place/[Your+Business+Name].com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-decoration-none"
+              >
+                123 Pain Relief Lane, Collinsville, IL 62234
+              </a>
+            </p>
+            <p className="mb-1">
+              <a
+                href="mailto:info@ellisfamilydentistry.com"
+                className="text-light text-decoration-none"
+              >
+                info@ellisfamilydentistry.com
+              </a>
+            </p>
             <p className="mb-0">(618) 867-5309</p>
           </Col>
 
