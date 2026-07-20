@@ -1,6 +1,10 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Alert, Button, Container, Form } from "react-bootstrap";
+
+import useContactForm from "../hooks/use-contact-form";
 
 export default function Contact() {
+  const { submitted, handleSubmit } = useContactForm();
+
   return (
     <section className="py-5">
       <Container>
@@ -10,69 +14,49 @@ export default function Contact() {
         </p>
 
         {/*  Contact Form */}
-        <form className="mx-auto" style={{ maxWidth: "600px" }}>
-          <Row className="mb-3">
-            <Col md={6}>
-              <label htmlFor="first name" className="form-label">
-                First Name *
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="first name"
-                placeholder="Enter your first name"
-              />
-            </Col>
-            <Col md={6}>
-              <label htmlFor="last name" className="form-label">
-                Last Name *
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="last name"
-                placeholder="Enter your last name"
-              />
-            </Col>
-          </Row>
-
-          <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
-              Phone
-            </label>
-            <input
-              type="tel"
-              className="form-control"
-              id="phone"
-              placeholder="Enter your phone number"
+        <Form
+          className="mx-auto"
+          style={{ maxWidth: "600px" }}
+          onSubmit={handleSubmit}
+        >
+          <Form.Group className="mb-3" controlId="formName">
+            <Form.Label>First Name *</Form.Label>
+            <Form.Control
+              type="text"
+              required
+              placeholder="Enter your first name"
             />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">
-              Email *
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              placeholder="Enter your email"
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formLastName">
+            <Form.Label>Last Name *</Form.Label>
+            <Form.Control
+              type="text"
+              required
+              placeholder="Enter your last name"
             />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="message" className="form-label">
-              Message *
-            </label>
-            <textarea
-              className="form-control"
-              id="message"
-              rows="4"
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formEmail">
+            <Form.Label>Email *</Form.Label>
+            <Form.Control type="email" placeholder="Enter your email" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formMessage">
+            <Form.Label>Message *</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={4}
               placeholder="Enter your message"
-            ></textarea>
-          </div>
+            />
+          </Form.Group>
           <Button type="submit" variant="warm">
             Submit
           </Button>
-        </form>
+
+          {submitted && (
+            <Alert variant="success" className="mt-3">
+              Thanks for reaching out! We'll get back to you soon.
+            </Alert>
+          )}
+        </Form>
 
         {/*  Hours of Operation separated by a line */}
         <hr className="my-5" />
