@@ -6,6 +6,8 @@ export default function useContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    // Reset the form after submission
+    e.currentTarget.reset();
   };
 
   return { submitted, handleSubmit };
