@@ -1,22 +1,11 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const services = [
-  {
-    title: "Preventive Care",
-    text: "Routine cleanings, exams, and checkups to keep your smile healthy.",
-  },
-  {
-    title: "Restorative Care",
-    text: "Fillings, crowns, and repairs to restore your teeth to full function.",
-  },
-  {
-    title: "Cosmetic Dentistry",
-    text: "Whitening, veneers, and smile makeovers tailored to you.",
-  },
-  {
-    title: "Pediatric Dentistry",
-    text: "Gentle, friendly care designed for our youngest patients.",
-  },
+const featuredServices = [
+  { title: "Preventive Care" },
+  { title: "Restorative Care" },
+  { title: "Cosmetic Dentistry" },
+  { title: "Pediatric Dentistry" },
 ];
 
 export default function Home() {
@@ -30,7 +19,7 @@ export default function Home() {
             Comfortable, modern dental care for the whole family.
           </p>
           <Button variant="warm" size="lg" href="/contact">
-            Call to Schedule
+            Book An Appointment
           </Button>
         </Container>
       </div>
@@ -49,23 +38,38 @@ export default function Home() {
             </p>
           </Col>
         </Row>
+
+        {/* Image placeholder */}
+        <Row className="justify-content-center mt-4">
+          <Col md={10}>
+            <img
+              src="https://placehold.co/1200x500?text=Office+Photo"
+              alt="Our office"
+              className="img-fluid rounded shadow-sm w-100"
+            />
+          </Col>
+        </Row>
       </Container>
 
-      {/* Services */}
+      {/* Services teaser */}
       <Container className="py-5">
         <h2 className="text-center mb-4">Our Services</h2>
         <Row>
-          {services.map((service, index) => (
+          {featuredServices.map((service, index) => (
             <Col md={3} sm={6} className="mb-4" key={index}>
               <Card className="h-100 text-center shadow-sm">
                 <Card.Body>
-                  <Card.Title>{service.title}</Card.Title>
-                  <Card.Text>{service.text}</Card.Text>
+                  <Card.Title className="mb-0">{service.title}</Card.Title>
                 </Card.Body>
               </Card>
             </Col>
           ))}
         </Row>
+        <div className="text-center mt-2">
+          <Button as={Link} to="/services" variant="warm">
+            View All Services
+          </Button>
+        </div>
       </Container>
     </>
   );
