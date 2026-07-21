@@ -14,7 +14,7 @@ export default function Footer() {
             <h6 className="text-uppercase mb-2">Contact</h6>
             <p className="mb-1">
               <a
-                href="https://google/maps/place/[Your+Business+Name].com"
+                href="https://www.google.com/maps/place/800+South+Morrison+Ave,+Collinsville,+IL+62234"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white text-decoration-none"
