@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const featuredServices = [
@@ -18,7 +18,7 @@ export default function Home() {
           <p className="lead text-muted mb-4">
             Comfortable, modern dental care for the whole family.
           </p>
-          <Button variant="warm" size="lg" href="/contact">
+          <Button as={Link} to="/contact" variant="warm" size="lg">
             Book An Appointment
           </Button>
         </Container>
