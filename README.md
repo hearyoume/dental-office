@@ -8,7 +8,7 @@ A modern, responsive dental practice website built as a portfolio piece to demon
 
 ## Services Page Preview
 
-![Services Page Screenshot](./images/services-page.png)
+![Services Page Screenshot](./public/images/services-page.png)
 
 ---
 
