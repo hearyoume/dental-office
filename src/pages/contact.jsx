@@ -3,7 +3,8 @@ import { Alert, Button, Container, Form } from "react-bootstrap";
 import useContactForm from "../hooks/use-contact-form";
 
 export default function Contact() {
-  const { submitted, handleSubmit } = useContactForm();
+  const { formData, errors, submitted, handleChange, handleSubmit } =
+    useContactForm();
 
   return (
     <section className="py-5">
@@ -13,40 +14,73 @@ export default function Contact() {
           Have questions or want to schedule an appointment? Reach out to us!
         </p>
 
-        {/*  Contact Form */}
         <Form
           className="mx-auto"
           style={{ maxWidth: "600px" }}
+          noValidate
           onSubmit={handleSubmit}
         >
           <Form.Group className="mb-3" controlId="formName">
             <Form.Label>First Name *</Form.Label>
             <Form.Control
               type="text"
-              required
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
               placeholder="Enter your first name"
+              isInvalid={!!errors.firstName}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.firstName}
+            </Form.Control.Feedback>
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formLastName">
             <Form.Label>Last Name *</Form.Label>
             <Form.Control
               type="text"
-              required
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
               placeholder="Enter your last name"
+              isInvalid={!!errors.lastName}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.lastName}
+            </Form.Control.Feedback>
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formEmail">
             <Form.Label>Email *</Form.Label>
-            <Form.Control type="email" placeholder="Enter your email" />
+            <Form.Control
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              isInvalid={!!errors.email}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.email}
+            </Form.Control.Feedback>
           </Form.Group>
+
           <Form.Group className="mb-3" controlId="formMessage">
             <Form.Label>Message *</Form.Label>
             <Form.Control
               as="textarea"
               rows={4}
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Enter your message"
+              isInvalid={!!errors.message}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.message}
+            </Form.Control.Feedback>
           </Form.Group>
+
           <Button type="submit" variant="warm">
             Submit
           </Button>
@@ -58,7 +92,6 @@ export default function Contact() {
           )}
         </Form>
 
-        {/*  Hours of Operation separated by a line */}
         <hr className="my-5" />
         <div className="text-center">
           <h2>Hours of Operation</h2>
